@@ -47,7 +47,7 @@ class ViewController: UITableViewController, UISearchBarDelegate {
                 let i = i as? [String: Any]
                 self.movies.append((i!["display_title"] as? String)!)
             }
-            //print(self.movies)
+            
             
             DispatchQueue.main.async {
                 self.tableView.reloadData()
