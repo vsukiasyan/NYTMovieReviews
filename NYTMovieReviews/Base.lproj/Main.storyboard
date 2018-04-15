@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,22 +18,38 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <searchBar key="tableHeaderView" contentMode="redraw" id="8c3-xv-SC7">
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="obR-qy-9Mc">
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <textInputTraits key="textInputTraits"/>
-                            <connections>
-                                <outlet property="delegate" destination="j93-kY-96K" id="sb8-7r-M3s"/>
-                            </connections>
                         </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="Vke-Iq-3gg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" textLabel="nc7-QP-1he" detailTextLabel="qID-sn-fTz" style="IBUITableViewCellStyleSubtitle" id="Vke-Iq-3gg">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vke-Iq-3gg" id="spK-ma-nRQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nc7-QP-1he">
+                                            <rect key="frame" x="16" y="5" width="33" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qID-sn-fTz">
+                                            <rect key="frame" x="16" y="26" width="44" height="14"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="guU-iN-xgn" kind="show" identifier="link" id="Ziq-ZX-jF1"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -42,7 +59,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="NYT Movie Review Search" id="hy9-M7-wSw"/>
                     <connections>
-                        <outlet property="searchBar" destination="8c3-xv-SC7" id="su0-ZO-jbR"/>
+                        <outlet property="searchBar" destination="obR-qy-9Mc" id="Cu0-Ki-bzs"/>
                         <outlet property="searchDisplayController" destination="AUU-UU-qpS" id="vF5-dq-5kj"/>
                     </connections>
                 </tableViewController>
@@ -50,7 +67,6 @@
                 <searchDisplayController id="AUU-UU-qpS">
                     <connections>
                         <outlet property="delegate" destination="j93-kY-96K" id="F0W-36-LC7"/>
-                        <outlet property="searchBar" destination="8c3-xv-SC7" id="I94-5l-1PL"/>
                         <outlet property="searchContentsController" destination="j93-kY-96K" id="wr4-rp-IIB"/>
                         <outlet property="searchResultsDataSource" destination="j93-kY-96K" id="RzY-qn-MgQ"/>
                         <outlet property="searchResultsDelegate" destination="j93-kY-96K" id="Vbf-It-dex"/>
@@ -59,9 +75,24 @@
             </objects>
             <point key="canvasLocation" x="829" y="-194"/>
         </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="Hm8-5e-ACt">
+            <objects>
+                <viewController id="guU-iN-xgn" customClass="DetailViewController" customModule="NYTMovieReviews" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aMM-Ax-zm4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Cit-JC-fsc"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ffk-Ej-PcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1677.5999999999999" y="-194.33497536945814"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="ew9-MW-RtQ">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VYf-VH-J5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="P4l-nP-vQ9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="39c-OX-XaZ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -71,7 +102,6 @@
                         <segue destination="j93-kY-96K" kind="relationship" relationship="rootViewController" id="wzi-Fp-eD7"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYf-VH-J5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124" y="-194"/>
         </scene>

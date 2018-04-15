@@ -15,6 +15,8 @@
 		6743B95320800E0000FF1D85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6743B95120800E0000FF1D85 /* LaunchScreen.storyboard */; };
 		6743B95E20800E0000FF1D85 /* NYTMovieReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6743B95D20800E0000FF1D85 /* NYTMovieReviewsTests.swift */; };
 		6743B96920800E0000FF1D85 /* NYTMovieReviewsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6743B96820800E0000FF1D85 /* NYTMovieReviewsUITests.swift */; };
+		6743B9772082C5D000FF1D85 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6743B9762082C5D000FF1D85 /* Movie.swift */; };
+		6743B9792082CFAA00FF1D85 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6743B9782082CFAA00FF1D85 /* DetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		6743B96420800E0000FF1D85 /* NYTMovieReviewsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NYTMovieReviewsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6743B96820800E0000FF1D85 /* NYTMovieReviewsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTMovieReviewsUITests.swift; sourceTree = "<group>"; };
 		6743B96A20800E0000FF1D85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6743B9762082C5D000FF1D85 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		6743B9782082CFAA00FF1D85 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +105,8 @@
 			children = (
 				6743B94520800DFF00FF1D85 /* AppDelegate.swift */,
 				6743B94720800DFF00FF1D85 /* ViewController.swift */,
+				6743B9782082CFAA00FF1D85 /* DetailViewController.swift */,
+				6743B9762082C5D000FF1D85 /* Movie.swift */,
 				6743B94920800DFF00FF1D85 /* Main.storyboard */,
 				6743B94F20800DFF00FF1D85 /* Assets.xcassets */,
 				6743B95120800E0000FF1D85 /* LaunchScreen.storyboard */,
@@ -264,6 +270,8 @@
 			files = (
 				6743B94820800DFF00FF1D85 /* ViewController.swift in Sources */,
 				6743B94E20800DFF00FF1D85 /* NYTMovieReviews.xcdatamodeld in Sources */,
+				6743B9792082CFAA00FF1D85 /* DetailViewController.swift in Sources */,
+				6743B9772082C5D000FF1D85 /* Movie.swift in Sources */,
 				6743B94620800DFF00FF1D85 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -433,6 +441,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6295RT7MX;
 				INFOPLIST_FILE = NYTMovieReviews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.vsukiasyan.NYTMovieReviews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -448,6 +457,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = P6295RT7MX;
 				INFOPLIST_FILE = NYTMovieReviews/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.test.vsukiasyan.NYTMovieReviews;
 				PRODUCT_NAME = "$(TARGET_NAME)";
