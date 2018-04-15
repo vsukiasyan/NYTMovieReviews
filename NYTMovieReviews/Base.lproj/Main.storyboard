@@ -28,18 +28,18 @@
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Vke-Iq-3gg" id="spK-ma-nRQ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nc7-QP-1he">
-                                            <rect key="frame" x="16" y="5" width="33" height="21"/>
+                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qID-sn-fTz">
-                                            <rect key="frame" x="16" y="26" width="44" height="14"/>
+                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                             <nil key="textColor"/>
@@ -82,8 +82,33 @@
                     <view key="view" contentMode="scaleToFill" id="aMM-Ax-zm4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fcy-8M-dTw">
+                                <rect key="frame" x="0.0" y="88" width="375" height="724"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="0sO-OT-Q7W">
+                                <rect key="frame" x="169" y="388" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="color" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Fcy-8M-dTw" firstAttribute="trailing" secondItem="Cit-JC-fsc" secondAttribute="trailing" id="1LN-ag-kGk"/>
+                            <constraint firstItem="Fcy-8M-dTw" firstAttribute="leading" secondItem="Cit-JC-fsc" secondAttribute="leading" id="Zfe-p9-BJJ"/>
+                            <constraint firstItem="Fcy-8M-dTw" firstAttribute="top" secondItem="Cit-JC-fsc" secondAttribute="top" id="dzZ-q4-rok"/>
+                            <constraint firstAttribute="bottom" secondItem="Fcy-8M-dTw" secondAttribute="bottom" id="iPm-7X-hbT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Cit-JC-fsc"/>
                     </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="0sO-OT-Q7W" id="7qr-Ww-KVy"/>
+                        <outlet property="webView" destination="Fcy-8M-dTw" id="hB0-i7-8KE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ffk-Ej-PcM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -92,7 +117,6 @@
         <!--Navigation Controller-->
         <scene sceneID="ew9-MW-RtQ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VYf-VH-J5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController id="P4l-nP-vQ9" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="39c-OX-XaZ">
                         <rect key="frame" x="0.0" y="44" width="375" height="44"/>
@@ -102,6 +126,7 @@
                         <segue destination="j93-kY-96K" kind="relationship" relationship="rootViewController" id="wzi-Fp-eD7"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VYf-VH-J5e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-124" y="-194"/>
         </scene>

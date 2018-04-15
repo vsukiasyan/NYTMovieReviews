@@ -14,14 +14,9 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
     var movieTitle: String?
     var link: String?
     
-    var webView: WKWebView!
-    
-    override func loadView() {
-        webView = WKWebView()
-        webView.navigationDelegate = self
-        view = webView
-    }
-    
+    @IBOutlet weak var webView: WKWebView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         print(movieTitle!)
@@ -29,8 +24,20 @@ class DetailViewController: UIViewController, WKNavigationDelegate {
         
         
         let url = URL(string: link!)
+        
+        webView.navigationDelegate = self
         webView.load(URLRequest(url: url!))
         webView.allowsBackForwardNavigationGestures = true
+    }
+    
+    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+        print("didStart")
+    }
+    
+    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+        print("didFinish")
+        activityIndicator.stopAnimating()
+        activityIndicator.isHidden = true
     }
     
     override func didReceiveMemoryWarning() {
